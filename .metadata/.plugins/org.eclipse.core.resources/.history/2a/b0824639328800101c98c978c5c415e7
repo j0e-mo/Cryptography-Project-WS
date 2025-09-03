@@ -1,0 +1,37 @@
+#include "mbedtls_includes/mbedtls/sha256.h"
+#include "Service_Layer/Std_Types.h"
+
+/**
+ * \brief          This function calculates the SHA-224 or SHA-256
+ *                 checksum of a buffer.
+ *
+ *                 The function allocates the context, performs the
+ *                 calculation, and frees the context.
+ *
+ *                 The SHA-256 result is calculated as
+ *                 output = SHA-256(input buffer).
+ *
+ * \param input    The buffer holding the data. This must be a readable
+ *                 buffer of length \p ilen Bytes.
+ * \param ilen     The length of the input data in Bytes.
+ * \param output   The SHA-224 or SHA-256 checksum result.
+ *                 This must be a writable buffer of length \c 32 bytes
+ *                 for SHA-256, \c 28 bytes for SHA-224.
+ * \param is224    Determines which function to use. This must be
+ *                 either \c 0 for SHA-256, or \c 1 for SHA-224.
+ *
+ * \return         \c 0 on success.
+ * \return         A negative error code on failure.
+ */
+int mbedtls_sha256(const unsigned char *input,
+                   size_t ilen,
+                   unsigned char *output,
+                   int is224);
+
+int main(void){
+    uint8[]="test string for sha 256";
+
+    for(;;){
+        mbedtls_sha256()
+    }
+}

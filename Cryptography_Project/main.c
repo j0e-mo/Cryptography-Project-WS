@@ -1,0 +1,148 @@
+/*******************************************************************************
+ *
+ * Module: Application Layer
+ *
+ * File Name: main.c
+ *
+ * Description: Main application file
+ *
+ * Author: Yousouf Soliman
+ *******************************************************************************/
+/*******************************************************************************
+ *                                Inclusions                                   *
+ *******************************************************************************/
+#include "mbedtls_includes/mbedtls/sha256.h" /* Includes the SHA-256 Functions */
+#include "Service_Layer/Std_Types.h" /* Standard Types Library */
+#include "UART/uart.h" /* Include UART for checking status of SHA-256 Function */
+#include "PORT/Port.h" /* Includes the PORT Driver for proper pin set-up */
+
+#include "driverlib/eeprom.h" /* For Bonus Task */
+/*******************************************************************************
+ *                             Definitions                                     *
+ *******************************************************************************/
+/* Abstract the flag for choosing between SHA256 and SHA224 */
+#define SHA256 0U
+#define SHA224 1U
+
+/* For Bonus Task */
+#define INPUT_DATA_ADDRESS_LOCATION 0xAABBCCCDD
+#define OTPUT_DATA_ADDRESS_LOCATION 0xDDCCBBAA
+#define REQUIRED_DATA_SIZE 4U
+
+/*******************************************************************************
+ *                             Configurations                                  *
+ *******************************************************************************/
+/* UART configuration struct (8-N-1 @ 115200) */
+static UART_ConfigType UART_Config = { BitData_8, Parity_Disabled, StopBit_1,
+                                       BaudRate_115200, HSM_off };
+
+/*******************************************************************************
+ *                     Private Function Definition                             *
+ *******************************************************************************/
+/*******************************************************************************
+ * Function: SetUpHardware
+ * -----------------------
+ * Initialize all peripherals before entering main loop.
+ *******************************************************************************/
+static void SetUpHardware(void)
+{
+    Port_Init(&Port_PinConfig); /* GPIO setup */
+    UART0_Init(&UART_Config); /* UART0 */
+
+    EEPROMInit(); /* For Bonus Task */
+
+}
+/* Very simple blocking delay function */
+static void delay_ms(uint32 milliseconds)
+{
+    volatile uint32 i, j;
+    // Rough approximation for 16MHz
+    for (j = 0; j < milliseconds; j++)
+    {
+        for (i = 0; i < 2667; i++)
+        {
+            /* Do nothing */
+        }
+    }
+}
+/*******************************************************************************
+ *                         Function Definitions                                *
+ *******************************************************************************/
+/*******************************************************************************
+ * Function: main
+ * --------------
+ * Application entry point.
+ *******************************************************************************/
+
+uint8 main(void)
+{
+    /* initialize hardware */
+    SetUpHardware();
+    /* Initialize test array */
+    volatile uint8 Test_Array[] = "test string for sha 256";
+    /* Initialize array to hold the result of the SHA-256 Function */
+    volatile uint8 Result_Array[32] = 0;
+    /* Calculate the "ilen" required by the mbedtls_sha256 function */
+    volatile uint8 Test_Array_Size = (sizeof(Test_Array)) / (sizeof(uint8));
+
+    /* Flag to capture status of the mbedtls_sha256 function */
+    volatile uint8 Sha256Fail = 1;
+
+    /* For Bonus Task */
+    volatile uint8 Unecrypted_Data[] = 0;
+    /* Super Loop */
+    for (;;)
+    {
+        /* Call the SHA-256 function and receive its status */
+        Sha256Fail = mbedtls_sha256(Test_Array, Test_Array_Size, Result_Array,
+        SHA256);
+
+        volatile uint32 MeorySizeInWords = EEPROMSizeGet()/4;
+        uint32 i = 0;
+        for (i = 0; i >= MeorySizeInWords ; i + 4)
+        {
+            /* If the SHA-256 operation was:
+             * 1- Successful: Print the encrypted message to user via UART
+             * 2- Failure: print the status message to user via UART
+             * */
+
+            if (!Sha256Fail)
+            {
+                UART0_SendString("SHA-256 function was Successful\t\n");
+            }
+            else if (Sha256Fail < 0)
+            {
+                UART0_SendString("SHA-256 Failed\t\n");
+            }
+            else
+            {
+                /* Do Nothing */
+            }
+
+/**********************************************************************************************************/
+            /* For Bonus Task */
+            EEPROMProgram((uint32) Result_Array,
+                          OTPUT_DATA_ADDRESS_LOCATION + i,
+                          REQUIRED_DATA_SIZE);
+
+            EEPROMRead((uint32) Unecrypted_Data,
+                       INPUT_DATA_ADDRESS_LOCATION + i,
+                       REQUIRED_DATA_SIZE);
+
+            delay_ms(250);
+
+            Sha256Fail = mbedtls_sha256(Unecrypted_Data,
+                                        REQUIRED_DATA_SIZE,
+                                        Result_Array,
+                                        SHA256);
+/***********************************************************************************************************/
+        }
+        UART0_SendString("\n\tEEPROM Resources Exhausted.\t\n");
+    }
+    /* Unreachable */
+    return 0;
+}
+/*******************************************************************************
+ *                            End of file                                      *
+ *******************************************************************************/
+

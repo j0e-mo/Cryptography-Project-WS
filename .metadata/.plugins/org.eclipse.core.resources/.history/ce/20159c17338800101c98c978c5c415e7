@@ -1,0 +1,70 @@
+#include "mbedtls_includes/mbedtls/sha256.h"
+#include "Service_Layer/Std_Types.h"
+#include "UART/uart.h"
+#include "PORT/Port.h"
+/**
+ * \brief          This function calculates the SHA-224 or SHA-256
+ *                 checksum of a buffer.
+ *
+ *                 The function allocates the context, performs the
+ *                 calculation, and frees the context.
+ *
+ *                 The SHA-256 result is calculated as
+ *                 output = SHA-256(input buffer).
+ *
+ * \param input    The buffer holding the data. This must be a readable
+ *                 buffer of length \p ilen Bytes.
+ * \param ilen     The length of the input data in Bytes.
+ * \param output   The SHA-224 or SHA-256 checksum result.
+ *                 This must be a writable buffer of length \c 32 bytes
+ *                 for SHA-256, \c 28 bytes for SHA-224.
+ * \param is224    Determines which function to use. This must be
+ *                 either \c 0 for SHA-256, or \c 1 for SHA-224.
+ *
+ * \return         \c 0 on success.
+ * \return         A negative error code on failure.
+ */
+#define SHA256 0
+#define SHA224 1
+typedef Test_Array_Data_Type uint8;
+int mbedtls_sha256(const unsigned char *input,
+                   size_t ilen,
+                   unsigned char *output,
+                   int is224);
+
+/*******************************************************************************
+ *                             Configurations                                  *
+ *******************************************************************************/
+/* UART configuration struct (8-N-1 @ 115200) */
+static UART_ConfigType UART_Config = {
+    BitData_8,
+    Parity_Disabled,
+    StopBit_1,
+    BaudRate_115200,
+    HSM_off
+};
+static void SetUpHardware(void)
+{
+    Port_Init(&Port_PinConfig);      /* GPIO setup */
+    UART0_Init(&UART_Config);       /* UART0 */
+
+}
+uint32 main(void){
+    Test_Array_Data_Type Test_Array[] = "test string for sha 256";
+    Test_Array_Data_Type Result_Array[32] = 0;
+    uint8 Test_Array_Size = (sizeof(Test_Array)) / (sizeof(Test_Array_Data_Type));
+    for(;;){
+        uint32 Sha256Fail= mbedtls_sha256(Test_Array,
+                       Test_Array_Size,
+                       Result_Array,
+                       SHA256);
+        if(!Sha256Fail){
+
+        }else if(Sha256Fail){
+
+        }else{
+
+        }
+    }
+    return 0;
+}

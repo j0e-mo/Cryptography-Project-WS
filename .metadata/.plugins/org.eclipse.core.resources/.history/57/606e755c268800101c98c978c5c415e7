@@ -1,0 +1,15 @@
+/*
+ * mbedtls_config.h
+ *
+ *  Created on: Sep 2, 2025
+ *      Author: yosef
+ */
+
+#ifndef MBEDTLS_CONFIG_H_
+#define MBEDTLS_CONFIG_H_
+
+
+
+
+
+#endif /* MBEDTLS_CONFIG_H_ */

@@ -1,0 +1,114 @@
+/*******************************************************************************
+ *
+ * Module: Application Layer
+ *
+ * File Name: main.c
+ *
+ * Description: Main application file
+ *
+ * Author: Yousouf Soliman
+ *******************************************************************************/
+/*******************************************************************************
+ *                                Inclusions                                   *
+ *******************************************************************************/
+#include "mbedtls_includes/mbedtls/sha256.h" /* Includes the SHA-256 Functions */
+#include "Service_Layer/Std_Types.h" /* Standard Types Library */
+#include "UART/uart.h" /* Include UART for checking status of SHA-256 Function */
+#include "PORT/Port.h" /* Includes the PORT Driver for proper pin set-up */
+/*******************************************************************************
+ *                             Definitions                                     *
+ *******************************************************************************/
+/* Abstract the flag for choosing between SHA256 and SHA224 */
+#define SHA256 0
+#define SHA224 1
+/* Abstract the data type in the "string" */
+typedef uint8 Test_Array_Data_Type;
+/*******************************************************************************
+ *                             Configurations                                  *
+ *******************************************************************************/
+/* UART configuration struct (8-N-1 @ 115200) */
+static UART_ConfigType UART_Config = { BitData_8, Parity_Disabled, StopBit_1,
+                                       BaudRate_115200, HSM_off };
+
+/*******************************************************************************
+ *                     Private Function Definition                             *
+ *******************************************************************************/
+/*******************************************************************************
+ * Function: SetUpHardware
+ * -----------------------
+ * Initialize all peripherals before entering main loop.
+ *******************************************************************************/
+static void SetUpHardware(void)
+{
+    Port_Init(&Port_PinConfig); /* GPIO setup */
+    UART0_Init(&UART_Config); /* UART0 */
+
+}
+/* Very simple blocking delay function */
+static void delay_ms(uint32 milliseconds) {
+    volatile uint32 i, j;
+    // Rough approximation for 16MHz
+    for(j = 0; j < milliseconds; j++) {
+        for(i = 0; i < 2667; i++) {
+            /* Do nothing */
+        }
+    }
+}
+/*******************************************************************************
+ *                         Function Definitions                                *
+ *******************************************************************************/
+/*******************************************************************************
+ * Function: main
+ * --------------
+ * Application entry point.
+ *******************************************************************************/
+
+uint8 main(void)
+{
+    /* initialize hardware */
+    SetUpHardware();
+    /* Initialize test array */
+    Test_Array_Data_Type Test_Array[] = "test string for sha 256";
+    /* Initialize array to hold the result of the SHA-256 Function */
+    Test_Array_Data_Type Result_Array[32] = 0;
+    /* Calculate the "ilen" required by the mbedtls_sha256 function */
+    uint8 Test_Array_Size = (sizeof(Test_Array))
+            / (sizeof(Test_Array_Data_Type));
+
+    UART0_SendString("SHA-256 Failed");
+    /* Super Loop */
+//    for (;;)
+//    {
+//
+//        uint32 Sha256Fail = 1;
+//
+//        /* Call the SHA-256 function and receive its status */
+//        Sha256Fail = mbedtls_sha256(Test_Array, Test_Array_Size,
+//                                           Result_Array,
+//                                           SHA256);
+//        /* If the SHA-256 operation was:
+//         * 1- Successful: Print the encrypted message to user via UART
+//         * 2- Failure: print the status message to user via UART
+//         * */
+//
+//        if (!Sha256Fail)
+//        {
+//            UART0_SendString(Result_Array);
+//        }
+//        else if (Sha256Fail)
+//        {
+//            UART0_SendString("SHA-256 Failed");
+//        }
+//        else
+//        {
+//            /* Do Nothing */
+//        }
+//        delay_ms(250);
+//    }
+    /* Unreachable */
+    return 0;
+}
+/*******************************************************************************
+ *                            End of file                                      *
+ *******************************************************************************/
+
