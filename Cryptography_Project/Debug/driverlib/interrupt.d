@@ -12,12 +12,12 @@ driverlib/interrupt.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/
 driverlib/interrupt.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
 driverlib/interrupt.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 driverlib/interrupt.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
-driverlib/interrupt.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_ints.h
-driverlib/interrupt.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_nvic.h
-driverlib/interrupt.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_types.h
-driverlib/interrupt.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/cpu.h
-driverlib/interrupt.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/debug.h
-driverlib/interrupt.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/interrupt.h
+driverlib/interrupt.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_ints.h
+driverlib/interrupt.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_nvic.h
+driverlib/interrupt.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_types.h
+driverlib/interrupt.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/cpu.h
+driverlib/interrupt.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/debug.h
+driverlib/interrupt.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/interrupt.h
 
 ../driverlib/interrupt.c:
 
@@ -43,15 +43,15 @@ C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_ints.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_ints.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_nvic.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_nvic.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_types.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_types.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/cpu.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/cpu.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/debug.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/debug.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/interrupt.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/interrupt.h:
 

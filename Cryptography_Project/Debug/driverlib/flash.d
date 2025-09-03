@@ -12,13 +12,13 @@ driverlib/flash.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/incl
 driverlib/flash.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
 driverlib/flash.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 driverlib/flash.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
-driverlib/flash.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_flash.h
-driverlib/flash.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_ints.h
-driverlib/flash.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_sysctl.h
-driverlib/flash.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_types.h
-driverlib/flash.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/debug.h
-driverlib/flash.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/flash.h
-driverlib/flash.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/interrupt.h
+driverlib/flash.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_flash.h
+driverlib/flash.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_ints.h
+driverlib/flash.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_sysctl.h
+driverlib/flash.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_types.h
+driverlib/flash.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/debug.h
+driverlib/flash.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/flash.h
+driverlib/flash.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/interrupt.h
 
 ../driverlib/flash.c:
 
@@ -44,17 +44,17 @@ C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_flash.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_flash.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_ints.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_ints.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_sysctl.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_sysctl.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_types.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_types.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/debug.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/debug.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/flash.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/flash.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/interrupt.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/interrupt.h:
 

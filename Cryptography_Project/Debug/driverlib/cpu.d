@@ -11,7 +11,7 @@ driverlib/cpu.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/includ
 driverlib/cpu.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
 driverlib/cpu.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 driverlib/cpu.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
-driverlib/cpu.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/cpu.h
+driverlib/cpu.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/cpu.h
 
 ../driverlib/cpu.c:
 
@@ -35,5 +35,5 @@ C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/cpu.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/cpu.h:
 

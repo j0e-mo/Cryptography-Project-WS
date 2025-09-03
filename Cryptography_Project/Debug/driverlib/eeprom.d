@@ -12,16 +12,16 @@ driverlib/eeprom.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/inc
 driverlib/eeprom.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
 driverlib/eeprom.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 driverlib/eeprom.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
-driverlib/eeprom.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_eeprom.h
-driverlib/eeprom.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_flash.h
-driverlib/eeprom.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_ints.h
-driverlib/eeprom.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_sysctl.h
-driverlib/eeprom.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_types.h
-driverlib/eeprom.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/debug.h
-driverlib/eeprom.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/flash.h
-driverlib/eeprom.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/interrupt.h
-driverlib/eeprom.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/sysctl.h
-driverlib/eeprom.obj: C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/eeprom.h
+driverlib/eeprom.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_eeprom.h
+driverlib/eeprom.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_flash.h
+driverlib/eeprom.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_ints.h
+driverlib/eeprom.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_sysctl.h
+driverlib/eeprom.obj: C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_types.h
+driverlib/eeprom.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/debug.h
+driverlib/eeprom.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/flash.h
+driverlib/eeprom.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/interrupt.h
+driverlib/eeprom.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/sysctl.h
+driverlib/eeprom.obj: C:/Cryptography-Project-WS/Cryptography_Project/driverlib/eeprom.h
 
 ../driverlib/eeprom.c:
 
@@ -47,23 +47,23 @@ C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_eeprom.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_eeprom.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_flash.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_flash.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_ints.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_ints.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_sysctl.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_sysctl.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/inc/hw_types.h:
+C:/Cryptography-Project-WS/Cryptography_Project/inc/hw_types.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/debug.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/debug.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/flash.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/flash.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/interrupt.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/interrupt.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/sysctl.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/sysctl.h:
 
-C:/Cryptography\ Project\ WS/Cryptography_Project/driverlib/eeprom.h:
+C:/Cryptography-Project-WS/Cryptography_Project/driverlib/eeprom.h:
 
